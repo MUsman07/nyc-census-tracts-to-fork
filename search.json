@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Census tracts",
+    "section": "",
+    "text": "[1] \"Summary Statistics by Race and Borough:\"\n\n\n# A tibble: 19 × 5\n   race     borough       count median_income mean_income\n   &lt;chr&gt;    &lt;chr&gt;         &lt;int&gt;         &lt;dbl&gt;       &lt;dbl&gt;\n 1 White    Bronx            28        96758       97306.\n 2 Asian    Bronx             3        63449       63355.\n 3 Black    Bronx            60        61870       62947.\n 4 Hispanic Bronx           246        42336       47397.\n 5 White    Brooklyn        355        87667       99847.\n 6 Black    Brooklyn        275        71218       69006.\n 7 Hispanic Brooklyn         79        64107       66577.\n 8 Asian    Brooklyn         63        63807       66327.\n 9 White    Manhattan       194       146970      149620.\n10 Black    Manhattan        34        63480.      61882.\n11 Asian    Manhattan         7        46615       54108.\n12 Hispanic Manhattan        64        44840.      49653.\n13 White    Queens          196        99903      100814.\n14 Black    Queens          141        92115       89886.\n15 Asian    Queens          179        79631       80586.\n16 Hispanic Queens          160        75453       77014.\n17 White    Staten Island    95       107292      104819.\n18 Hispanic Staten Island    11        73380       69552.\n19 Black    Staten Island    11        59732       64919."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "New York City"
+  }
+]
