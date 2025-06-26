@@ -1,5 +1,73 @@
 ---
-title: "About"
+title: "About This Analysis"
+format: html
 ---
 
-New York City
+## Project Overview
+
+This project examines income inequality across New York City's diverse neighborhoods through the lens of race and geography. Using census tract-level data, we analyze median household income patterns across NYC's five boroughs to understand how economic opportunities vary by both racial demographics and location.
+
+## The Data
+
+Our analysis is based on **2,242 census tract observations** across New York City, containing:
+
+- **Geographic Coverage**: All five NYC boroughs (Manhattan, Brooklyn, Queens, Bronx, Staten Island)
+- **Demographic Variables**: Racial and ethnic categories including White, Black, Hispanic, and Asian populations
+- **Economic Indicator**: Median household income by census tract
+- **Spatial Resolution**: Census tract level (the smallest geographic unit for which the Census Bureau publishes sample data)
+
+## Why This Matters
+
+Income inequality remains one of the most pressing social and economic issues of our time. New York City, as one of the world's most diverse metropolitan areas, provides a unique lens for examining how economic opportunities are distributed across different communities. Understanding these patterns is crucial for:
+
+- **Policy Development**: Informing targeted interventions and resource allocation
+- **Community Planning**: Identifying areas that may benefit from economic development initiatives  
+- **Social Justice**: Documenting disparities that affect educational, health, and housing outcomes
+- **Research**: Contributing to broader discussions about urban inequality and segregation
+
+## Methodology
+
+Our analysis employs three complementary visualization approaches:
+
+1. **Borough-Level Distribution Analysis**: Box plots showing income ranges and variability within each racial group across different boroughs
+2. **City-Wide Comparison**: Violin plots revealing the overall distribution shapes and ranking of racial groups by median income
+3. **Cross-Borough Comparison**: Bar charts enabling direct comparison of how racial income gaps manifest differently across NYC's geography
+
+## Key Research Questions
+
+This analysis addresses several important questions:
+
+- How do income levels vary between racial groups within each NYC borough?
+- Are income disparities consistent across all boroughs, or do they vary by location?
+- Which communities have the greatest income variability, and what might this suggest about economic mobility?
+- How do neighborhood-level patterns contribute to broader metropolitan inequality?
+
+## Technical Approach
+
+The analysis was conducted using R with the following key packages:
+- `ggplot2` for data visualization
+- `dplyr` for data manipulation and summary statistics
+- `stringr` for text processing of geographic identifiers
+
+Data cleaning involved extracting borough information from census tract names and standardizing racial category classifications for consistent analysis.
+
+## Limitations and Considerations
+
+While this analysis provides valuable insights, it's important to note several limitations:
+
+- **Temporal Snapshot**: The data represents a specific time period and may not reflect current conditions
+- **Aggregation Level**: Census tract medians may mask within-tract variation
+- **Sample Representation**: Some racial groups may have limited representation in certain boroughs
+- **Causation**: The analysis describes patterns but does not establish causal relationships
+
+## Future Directions
+
+This analysis opens several avenues for deeper investigation:
+- Temporal trends in income inequality over multiple census periods
+- Intersection with housing costs and affordability
+- Relationship between income patterns and access to services, education, and employment opportunities
+- Integration with other demographic and social indicators
+
+---
+
+*This analysis is part of ongoing research into urban inequality and demographic patterns. For questions about methodology or data sources, please refer to the visualizations and documentation provided.*

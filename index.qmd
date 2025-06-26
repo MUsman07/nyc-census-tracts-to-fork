@@ -176,3 +176,6 @@ This bar chart enables direct comparison of median incomes across boroughs for e
 ```{r}
 p3
 ```
+## Key Findings
+These three visualizations together provide a comprehensive view of income inequality in NYC, revealing patterns of economic segregation and opportunity across the city's diverse communities.
+
