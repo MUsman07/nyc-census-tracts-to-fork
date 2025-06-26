@@ -95,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About This Analysis</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -108,8 +108,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#income-distribution-by-race-across-nyc-boroughs" id="toc-income-distribution-by-race-across-nyc-boroughs" class="nav-link active" data-scroll-target="#income-distribution-by-race-across-nyc-boroughs">Income Distribution by Race Across NYC Boroughs</a></li>
+  <li><a href="#overall-income-distribution-by-race" id="toc-overall-income-distribution-by-race" class="nav-link" data-scroll-target="#overall-income-distribution-by-race">Overall Income Distribution by Race</a></li>
+  <li><a href="#borough-level-income-comparison" id="toc-borough-level-income-comparison" class="nav-link" data-scroll-target="#borough-level-income-comparison">Borough-Level Income Comparison</a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -117,58 +126,51 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="income-distribution-by-race-across-nyc-boroughs" class="level2">
+<h2 class="anchored" data-anchor-id="income-distribution-by-race-across-nyc-boroughs">Income Distribution by Race Across NYC Boroughs</h2>
+<p>This visualization reveals how income varies both by race and geography within New York City. The box plots show the median, quartiles, and outliers for each racial group, while the individual points represent census tracts. Each panel shows a different borough, allowing us to compare income patterns across NYC’s diverse neighborhoods.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Summary Statistics by Race and Borough:"</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19 × 5
-   race     borough       count median_income mean_income
-   &lt;chr&gt;    &lt;chr&gt;         &lt;int&gt;         &lt;dbl&gt;       &lt;dbl&gt;
- 1 White    Bronx            28        96758       97306.
- 2 Asian    Bronx             3        63449       63355.
- 3 Black    Bronx            60        61870       62947.
- 4 Hispanic Bronx           246        42336       47397.
- 5 White    Brooklyn        355        87667       99847.
- 6 Black    Brooklyn        275        71218       69006.
- 7 Hispanic Brooklyn         79        64107       66577.
- 8 Asian    Brooklyn         63        63807       66327.
- 9 White    Manhattan       194       146970      149620.
-10 Black    Manhattan        34        63480.      61882.
-11 Asian    Manhattan         7        46615       54108.
-12 Hispanic Manhattan        64        44840.      49653.
-13 White    Queens          196        99903      100814.
-14 Black    Queens          141        92115       89886.
-15 Asian    Queens          179        79631       80586.
-16 Hispanic Queens          160        75453       77014.
-17 White    Staten Island    95       107292      104819.
-18 Hispanic Staten Island    11        73380       69552.
-19 Black    Staten Island    11        59732       64919.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="overall-income-distribution-by-race" class="level2">
+<h2 class="anchored" data-anchor-id="overall-income-distribution-by-race">Overall Income Distribution by Race</h2>
+<p>This violin plot provides a city-wide perspective on income inequality across racial groups. The violin shapes show the density of census tracts at different income levels - wider sections indicate more common income ranges. Racial groups are ordered from lowest to highest median income, making the disparities clearly visible.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="borough-level-income-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="borough-level-income-comparison">Borough-Level Income Comparison</h2>
+<p>This bar chart enables direct comparison of median incomes across boroughs for each racial group. It reveals whether income gaps exist consistently across all boroughs or vary by geographic location. Only racial groups with sufficient data (5+ census tracts) in each borough are shown to ensure statistical reliability.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings">Key Findings</h2>
+<p>These three visualizations together provide a comprehensive view of income inequality in NYC, revealing patterns of economic segregation and opportunity across the city’s diverse communities.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

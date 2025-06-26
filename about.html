@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Income and Race in New York City</title>
+<title>About This Analysis – Income and Race in New York City</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About This Analysis</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -108,15 +108,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview">Project Overview</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#key-research-questions" id="toc-key-research-questions" class="nav-link" data-scroll-target="#key-research-questions">Key Research Questions</a></li>
+  <li><a href="#technical-approach" id="toc-technical-approach" class="nav-link" data-scroll-target="#technical-approach">Technical Approach</a></li>
+  <li><a href="#limitations-and-considerations" id="toc-limitations-and-considerations" class="nav-link" data-scroll-target="#limitations-and-considerations">Limitations and Considerations</a></li>
+  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions">Future Directions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">About This Analysis</h1>
 </div>
 
 
@@ -133,9 +146,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>New York City</p>
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
+<p>This project examines income inequality across New York City’s diverse neighborhoods through the lens of race and geography. Using census tract-level data, we analyze median household income patterns across NYC’s five boroughs to understand how economic opportunities vary by both racial demographics and location.</p>
+</section>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>Our analysis is based on <strong>2,242 census tract observations</strong> across New York City, containing:</p>
+<ul>
+<li><strong>Geographic Coverage</strong>: All five NYC boroughs (Manhattan, Brooklyn, Queens, Bronx, Staten Island)</li>
+<li><strong>Demographic Variables</strong>: Racial and ethnic categories including White, Black, Hispanic, and Asian populations</li>
+<li><strong>Economic Indicator</strong>: Median household income by census tract</li>
+<li><strong>Spatial Resolution</strong>: Census tract level (the smallest geographic unit for which the Census Bureau publishes sample data)</li>
+</ul>
+</section>
+<section id="why-this-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
+<p>Income inequality remains one of the most pressing social and economic issues of our time. New York City, as one of the world’s most diverse metropolitan areas, provides a unique lens for examining how economic opportunities are distributed across different communities. Understanding these patterns is crucial for:</p>
+<ul>
+<li><strong>Policy Development</strong>: Informing targeted interventions and resource allocation</li>
+<li><strong>Community Planning</strong>: Identifying areas that may benefit from economic development initiatives<br>
+</li>
+<li><strong>Social Justice</strong>: Documenting disparities that affect educational, health, and housing outcomes</li>
+<li><strong>Research</strong>: Contributing to broader discussions about urban inequality and segregation</li>
+</ul>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>Our analysis employs three complementary visualization approaches:</p>
+<ol type="1">
+<li><strong>Borough-Level Distribution Analysis</strong>: Box plots showing income ranges and variability within each racial group across different boroughs</li>
+<li><strong>City-Wide Comparison</strong>: Violin plots revealing the overall distribution shapes and ranking of racial groups by median income</li>
+<li><strong>Cross-Borough Comparison</strong>: Bar charts enabling direct comparison of how racial income gaps manifest differently across NYC’s geography</li>
+</ol>
+</section>
+<section id="key-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="key-research-questions">Key Research Questions</h2>
+<p>This analysis addresses several important questions:</p>
+<ul>
+<li>How do income levels vary between racial groups within each NYC borough?</li>
+<li>Are income disparities consistent across all boroughs, or do they vary by location?</li>
+<li>Which communities have the greatest income variability, and what might this suggest about economic mobility?</li>
+<li>How do neighborhood-level patterns contribute to broader metropolitan inequality?</li>
+</ul>
+</section>
+<section id="technical-approach" class="level2">
+<h2 class="anchored" data-anchor-id="technical-approach">Technical Approach</h2>
+<p>The analysis was conducted using R with the following key packages: - <code>ggplot2</code> for data visualization - <code>dplyr</code> for data manipulation and summary statistics - <code>stringr</code> for text processing of geographic identifiers</p>
+<p>Data cleaning involved extracting borough information from census tract names and standardizing racial category classifications for consistent analysis.</p>
+</section>
+<section id="limitations-and-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-considerations">Limitations and Considerations</h2>
+<p>While this analysis provides valuable insights, it’s important to note several limitations:</p>
+<ul>
+<li><strong>Temporal Snapshot</strong>: The data represents a specific time period and may not reflect current conditions</li>
+<li><strong>Aggregation Level</strong>: Census tract medians may mask within-tract variation</li>
+<li><strong>Sample Representation</strong>: Some racial groups may have limited representation in certain boroughs</li>
+<li><strong>Causation</strong>: The analysis describes patterns but does not establish causal relationships</li>
+</ul>
+</section>
+<section id="future-directions" class="level2">
+<h2 class="anchored" data-anchor-id="future-directions">Future Directions</h2>
+<p>This analysis opens several avenues for deeper investigation: - Temporal trends in income inequality over multiple census periods - Intersection with housing costs and affordability - Relationship between income patterns and access to services, education, and employment opportunities - Integration with other demographic and social indicators</p>
+<hr>
+<p><em>This analysis is part of ongoing research into urban inequality and demographic patterns. For questions about methodology or data sources, please refer to the visualizations and documentation provided.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -4,13 +4,97 @@
     "href": "index.html",
     "title": "Income and Race in New York City",
     "section": "",
-    "text": "[1] \"Summary Statistics by Race and Borough:\"\n\n\n# A tibble: 19 × 5\n   race     borough       count median_income mean_income\n   &lt;chr&gt;    &lt;chr&gt;         &lt;int&gt;         &lt;dbl&gt;       &lt;dbl&gt;\n 1 White    Bronx            28        96758       97306.\n 2 Asian    Bronx             3        63449       63355.\n 3 Black    Bronx            60        61870       62947.\n 4 Hispanic Bronx           246        42336       47397.\n 5 White    Brooklyn        355        87667       99847.\n 6 Black    Brooklyn        275        71218       69006.\n 7 Hispanic Brooklyn         79        64107       66577.\n 8 Asian    Brooklyn         63        63807       66327.\n 9 White    Manhattan       194       146970      149620.\n10 Black    Manhattan        34        63480.      61882.\n11 Asian    Manhattan         7        46615       54108.\n12 Hispanic Manhattan        64        44840.      49653.\n13 White    Queens          196        99903      100814.\n14 Black    Queens          141        92115       89886.\n15 Asian    Queens          179        79631       80586.\n16 Hispanic Queens          160        75453       77014.\n17 White    Staten Island    95       107292      104819.\n18 Hispanic Staten Island    11        73380       69552.\n19 Black    Staten Island    11        59732       64919."
+    "text": "This visualization reveals how income varies both by race and geography within New York City. The box plots show the median, quartiles, and outliers for each racial group, while the individual points represent census tracts. Each panel shows a different borough, allowing us to compare income patterns across NYC’s diverse neighborhoods."
+  },
+  {
+    "objectID": "index.html#income-distribution-by-race-across-nyc-boroughs",
+    "href": "index.html#income-distribution-by-race-across-nyc-boroughs",
+    "title": "Income and Race in New York City",
+    "section": "",
+    "text": "This visualization reveals how income varies both by race and geography within New York City. The box plots show the median, quartiles, and outliers for each racial group, while the individual points represent census tracts. Each panel shows a different borough, allowing us to compare income patterns across NYC’s diverse neighborhoods."
+  },
+  {
+    "objectID": "index.html#overall-income-distribution-by-race",
+    "href": "index.html#overall-income-distribution-by-race",
+    "title": "Income and Race in New York City",
+    "section": "Overall Income Distribution by Race",
+    "text": "Overall Income Distribution by Race\nThis violin plot provides a city-wide perspective on income inequality across racial groups. The violin shapes show the density of census tracts at different income levels - wider sections indicate more common income ranges. Racial groups are ordered from lowest to highest median income, making the disparities clearly visible."
+  },
+  {
+    "objectID": "index.html#borough-level-income-comparison",
+    "href": "index.html#borough-level-income-comparison",
+    "title": "Income and Race in New York City",
+    "section": "Borough-Level Income Comparison",
+    "text": "Borough-Level Income Comparison\nThis bar chart enables direct comparison of median incomes across boroughs for each racial group. It reveals whether income gaps exist consistently across all boroughs or vary by geographic location. Only racial groups with sufficient data (5+ census tracts) in each borough are shown to ensure statistical reliability."
+  },
+  {
+    "objectID": "index.html#key-findings",
+    "href": "index.html#key-findings",
+    "title": "Income and Race in New York City",
+    "section": "Key Findings",
+    "text": "Key Findings\nThese three visualizations together provide a comprehensive view of income inequality in NYC, revealing patterns of economic segregation and opportunity across the city’s diverse communities."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About This Analysis",
     "section": "",
-    "text": "New York City"
+    "text": "This project examines income inequality across New York City’s diverse neighborhoods through the lens of race and geography. Using census tract-level data, we analyze median household income patterns across NYC’s five boroughs to understand how economic opportunities vary by both racial demographics and location."
+  },
+  {
+    "objectID": "about.html#project-overview",
+    "href": "about.html#project-overview",
+    "title": "About This Analysis",
+    "section": "",
+    "text": "This project examines income inequality across New York City’s diverse neighborhoods through the lens of race and geography. Using census tract-level data, we analyze median household income patterns across NYC’s five boroughs to understand how economic opportunities vary by both racial demographics and location."
+  },
+  {
+    "objectID": "about.html#the-data",
+    "href": "about.html#the-data",
+    "title": "About This Analysis",
+    "section": "The Data",
+    "text": "The Data\nOur analysis is based on 2,242 census tract observations across New York City, containing:\n\nGeographic Coverage: All five NYC boroughs (Manhattan, Brooklyn, Queens, Bronx, Staten Island)\nDemographic Variables: Racial and ethnic categories including White, Black, Hispanic, and Asian populations\nEconomic Indicator: Median household income by census tract\nSpatial Resolution: Census tract level (the smallest geographic unit for which the Census Bureau publishes sample data)"
+  },
+  {
+    "objectID": "about.html#why-this-matters",
+    "href": "about.html#why-this-matters",
+    "title": "About This Analysis",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nIncome inequality remains one of the most pressing social and economic issues of our time. New York City, as one of the world’s most diverse metropolitan areas, provides a unique lens for examining how economic opportunities are distributed across different communities. Understanding these patterns is crucial for:\n\nPolicy Development: Informing targeted interventions and resource allocation\nCommunity Planning: Identifying areas that may benefit from economic development initiatives\n\nSocial Justice: Documenting disparities that affect educational, health, and housing outcomes\nResearch: Contributing to broader discussions about urban inequality and segregation"
+  },
+  {
+    "objectID": "about.html#methodology",
+    "href": "about.html#methodology",
+    "title": "About This Analysis",
+    "section": "Methodology",
+    "text": "Methodology\nOur analysis employs three complementary visualization approaches:\n\nBorough-Level Distribution Analysis: Box plots showing income ranges and variability within each racial group across different boroughs\nCity-Wide Comparison: Violin plots revealing the overall distribution shapes and ranking of racial groups by median income\nCross-Borough Comparison: Bar charts enabling direct comparison of how racial income gaps manifest differently across NYC’s geography"
+  },
+  {
+    "objectID": "about.html#key-research-questions",
+    "href": "about.html#key-research-questions",
+    "title": "About This Analysis",
+    "section": "Key Research Questions",
+    "text": "Key Research Questions\nThis analysis addresses several important questions:\n\nHow do income levels vary between racial groups within each NYC borough?\nAre income disparities consistent across all boroughs, or do they vary by location?\nWhich communities have the greatest income variability, and what might this suggest about economic mobility?\nHow do neighborhood-level patterns contribute to broader metropolitan inequality?"
+  },
+  {
+    "objectID": "about.html#technical-approach",
+    "href": "about.html#technical-approach",
+    "title": "About This Analysis",
+    "section": "Technical Approach",
+    "text": "Technical Approach\nThe analysis was conducted using R with the following key packages: - ggplot2 for data visualization - dplyr for data manipulation and summary statistics - stringr for text processing of geographic identifiers\nData cleaning involved extracting borough information from census tract names and standardizing racial category classifications for consistent analysis."
+  },
+  {
+    "objectID": "about.html#limitations-and-considerations",
+    "href": "about.html#limitations-and-considerations",
+    "title": "About This Analysis",
+    "section": "Limitations and Considerations",
+    "text": "Limitations and Considerations\nWhile this analysis provides valuable insights, it’s important to note several limitations:\n\nTemporal Snapshot: The data represents a specific time period and may not reflect current conditions\nAggregation Level: Census tract medians may mask within-tract variation\nSample Representation: Some racial groups may have limited representation in certain boroughs\nCausation: The analysis describes patterns but does not establish causal relationships"
+  },
+  {
+    "objectID": "about.html#future-directions",
+    "href": "about.html#future-directions",
+    "title": "About This Analysis",
+    "section": "Future Directions",
+    "text": "Future Directions\nThis analysis opens several avenues for deeper investigation: - Temporal trends in income inequality over multiple census periods - Intersection with housing costs and affordability - Relationship between income patterns and access to services, education, and employment opportunities - Integration with other demographic and social indicators\n\nThis analysis is part of ongoing research into urban inequality and demographic patterns. For questions about methodology or data sources, please refer to the visualizations and documentation provided."
   }
 ]
