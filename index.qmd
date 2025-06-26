@@ -1,7 +1,178 @@
 ---
-title: "Census tracts"
+execute: 
+  echo: false
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{r}
+#| message: false
+library(tidyverse)
+
+x <- read_csv("data/nyc_tracts.csv")
+```
+
+
+```{r}
+#| message: false
+# Load required libraries for data manipulation and visualization
+library(ggplot2)  # For creating beautiful and customizable plots
+library(dplyr)    # For data manipulation and transformation
+library(scales)   # For formatting axes labels (currency, percentages, etc.)
+library(stringr)  # For string manipulation and pattern matching
+
+# DATA PREPARATION AND CLEANING
+# The raw data contains census tract names with borough information embedded in the tract description
+# We need to extract this geographic information and standardize race categories for analysis
+
+# Step 1: Clean the dataset and extract meaningful geographic and demographic information
+x_clean <- x %>%
+  # Remove census tracts with missing income data to ensure accurate analysis
+  filter(!is.na(med_income)) %>%
+  # Extract borough names from the tract description string
+  # This allows us to analyze income patterns by NYC borough
+  mutate(
+    borough = case_when(
+      str_detect(tract, "Queens County") ~ "Queens",
+      str_detect(tract, "Kings County") ~ "Brooklyn", 
+      str_detect(tract, "New York County") ~ "Manhattan",
+      str_detect(tract, "Bronx County") ~ "Bronx",
+      str_detect(tract, "Richmond County") ~ "Staten Island",
+      TRUE ~ "Other"
+    )
+  ) %>%
+  # Standardize race/ethnicity categories for consistent analysis
+  # This handles variations in how racial categories might be coded
+  mutate(
+    race = case_when(
+      str_detect(race, "White") ~ "White",
+      str_detect(race, "Black") ~ "Black",
+      str_detect(race, "Hisp") ~ "Hispanic",
+      str_detect(race, "Asian") ~ "Asian",
+      TRUE ~ race
+    )
+  )
+
+# VISUALIZATION 1: INCOME DISTRIBUTION BY RACE ACROSS NYC BOROUGHS
+# This plot reveals how income varies both by race and geography within New York City
+# Box plots show the median, quartiles, and outliers, while jittered points show individual tract data
+
+p1 <- ggplot(x_clean, aes(x = race, y = med_income, fill = race)) +
+  geom_boxplot(alpha = 0.7, outlier.alpha = 0.5) +
+  geom_jitter(alpha = 0.3, width = 0.2, size = 0.5) +
+  facet_wrap(~borough, scales = "free_x") +
+  scale_y_continuous(labels = dollar_format(scale = 1e-3, suffix = "K")) +
+  scale_fill_viridis_d(name = "Race/Ethnicity") +
+  labs(
+    title = "Median Income Distribution by Race Across NYC Boroughs",
+    subtitle = "Distribution of median household income by census tract",
+    x = "Race/Ethnicity",
+    y = "Median Household Income",
+    caption = "Data: Census tract-level median income by race\nNote: Each point represents a census tract"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold"),
+    plot.subtitle = element_text(size = 12),
+    strip.text = element_text(face = "bold"),
+    legend.position = "bottom"
+  )
+
+# SUMMARY STATISTICS TABLE (for internal use - not displayed)
+# Calculate key statistics to quantify income disparities across racial and geographic lines
+summary_stats <- x_clean %>%
+  group_by(race, borough) %>%
+  summarise(
+    count = n(),
+    median_income = median(med_income, na.rm = TRUE),
+    mean_income = mean(med_income, na.rm = TRUE),
+    .groups = 'drop'
+  ) %>%
+  arrange(borough, desc(median_income))
+
+# Display the first visualization
+
+
+# VISUALIZATION 2: OVERALL INCOME DISTRIBUTION ACROSS ALL NYC
+# This violin plot shows the shape of income distribution for each racial group
+# Wider sections indicate more census tracts at that income level
+
+p2 <- ggplot(x_clean, aes(x = reorder(race, med_income, median), y = med_income, fill = race)) +
+  geom_violin(alpha = 0.7) +    # Shows distribution shape/density
+  geom_boxplot(width = 0.2, alpha = 0.8, outlier.alpha = 0.5) +  # Shows quartiles and outliers
+  scale_y_continuous(labels = dollar_format(scale = 1e-3, suffix = "K")) +
+  scale_fill_viridis_d(name = "Race/Ethnicity") +
+  labs(
+    title = "Overall Income Distribution by Race in NYC",
+    subtitle = "Violin plots showing income distribution density",
+    x = "Race/Ethnicity (ordered by median income)",
+    y = "Median Household Income"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold"),
+    legend.position = "none"
+  ) +
+  coord_flip()  # Horizontal orientation for better readability
+
+
+
+# VISUALIZATION 3: BOROUGH-LEVEL INCOME COMPARISON
+# This bar chart directly compares median incomes across boroughs for each racial group
+# It helps identify which boroughs offer better economic opportunities for different communities
+
+borough_summary <- x_clean %>%
+  group_by(borough, race) %>%
+  summarise(
+    median_income = median(med_income, na.rm = TRUE),
+    count = n(),
+    .groups = 'drop'
+  ) %>%
+  filter(count >= 5)  # Only include combinations with sufficient data (at least 5 census tracts)
+
+p3 <- ggplot(borough_summary, aes(x = borough, y = median_income, fill = race)) +
+  geom_col(position = "dodge", alpha = 0.8) +  # Side-by-side bars for easy comparison
+  scale_y_continuous(labels = dollar_format(scale = 1e-3, suffix = "K")) +
+  scale_fill_viridis_d(name = "Race/Ethnicity") +
+  labs(
+    title = "Median Income by Race and Borough",
+    subtitle = "Comparing median household income across NYC boroughs",
+    x = "Borough",
+    y = "Median Household Income"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold"),
+    legend.position = "bottom"
+  )
+
+
+```
+
+
+## Income Distribution by Race Across NYC Boroughs
+
+This visualization reveals how income varies both by race and geography within New York City. The box plots show the median, quartiles, and outliers for each racial group, while the individual points represent census tracts. Each panel shows a different borough, allowing us to compare income patterns across NYC's diverse neighborhoods.
+
+```{r}
+#| echo: false
+# Your first plot code here
+p1
+```
+## Overall Income Distribution by Race
+This violin plot provides a city-wide perspective on income inequality across racial groups. The violin shapes show the density of census tracts at different income levels - wider sections indicate more common income ranges. Racial groups are ordered from lowest to highest median income, making the disparities clearly visible.
+
+
+```{r}
+p2
+```
+
+## Borough-Level Income Comparison
+This bar chart enables direct comparison of median incomes across boroughs for each racial group. It reveals whether income gaps exist consistently across all boroughs or vary by geographic location. Only racial groups with sufficient data (5+ census tracts) in each borough are shown to ensure statistical reliability.
+
+
+```{r}
+p3
+```
